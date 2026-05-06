@@ -1,0 +1,28 @@
+[project]
+name = "eps-core"
+version = "0.1.0"
+description = "EPS: Entry Point System CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+eps = "eps.cli:main"
+
+[project.entry-points."eps.commands"]
+entry = "eps.commands.entry:register"
+exe = "eps.commands.exe:register"
+view = "eps.commands.view:register"
+delete = "eps.commands.delete:register"
+modify = "eps.commands.modify:register"
+save = "eps.commands.save:register"
+load = "eps.commands.load:register"
+settings = "eps.commands.settings:register"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0"
+]
